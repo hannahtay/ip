@@ -15,10 +15,4 @@ public class sysMsgs {
         System.out.println("c U soon! ꈍ ꈍ");
         System.out.println("──────────୨ৎ──────────");
     }
-
-    public void listMsg() {
-        System.out.println("──────────୨ৎ──────────");
-        System.out.println("To-do!");
-        System.out.println("──────────୨ৎ──────────");
-    }
 }

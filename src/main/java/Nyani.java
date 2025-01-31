@@ -5,19 +5,19 @@ public class Nyani {
         Scanner sc = new Scanner(System.in);
         sysMsgs systemOut = new sysMsgs();
         systemOut.showIntro();
+        todoList toDo = new todoList();
 
         while (true) {
             String input = sc.nextLine();
+
             if (input.equals("list")) {
-                systemOut.listMsg();
+                toDo.showTasks();
             }
             else if (input.equalsIgnoreCase("bye")) {
                systemOut.exitMsg();
                 break;
             } else {
-                System.out.println("──────────୨ৎ──────────");
-                System.out.println(input);
-                System.out.println("──────────୨ৎ──────────");
+                toDo.addTask(input);
             }
         }
         sc.close();
