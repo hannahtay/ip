@@ -12,7 +12,24 @@ public class Nyani {
 
             if (input.equals("list")) {
                 toDo.showTasks();
+            } else if (input.startsWith("mark ")) {
+                try {
+                    int taskNumber = Integer.parseInt(input.substring(5).trim());
+                    toDo.markTaskAsDone(taskNumber);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid task number :(");
+                }
             }
+
+            else if (input.startsWith("unmark ")) {
+                try {
+                    int taskNumber = Integer.parseInt(input.substring(7).trim());
+                    toDo.markTaskAsNotDone(taskNumber);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid task number :(");
+                }
+            }
+
             else if (input.equalsIgnoreCase("bye")) {
                systemOut.exitMsg();
                 break;
