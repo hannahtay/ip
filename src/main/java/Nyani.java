@@ -30,11 +30,32 @@ public class Nyani {
                 }
             }
 
+            else if (input.startsWith ("deadline ")) {
+                String[] parts = input.substring(9).split(" /by ", 2);
+                if (parts.length == 2) {
+                    toDo.addTask(new Deadline(parts[0], parts[1]));
+                } else {
+                    System.out.println("wrong format! try deadline [task] /by [date/time]!");
+                }
+            } else if (input.startsWith ("event ")) {
+                String[] fromPart = input.substring(6).split(" /from ", 2);
+                if (fromPart.length == 2) {
+                    String[] toPart = fromPart[1].split("/to ", 2);
+                    if (toPart.length == 2) {
+                        toDo.addTask(new Event(fromPart[0], toPart[0], toPart[1]));
+                    } else {
+                        System.out.println("wrong format! try event /from [date/time] /to [date/time]!");
+                    }
+                } else {
+                    System.out.println("wrong format! try event /from [date/time] /to [date/time]!");
+                }
+            }
+
             else if (input.equalsIgnoreCase("bye")) {
                systemOut.exitMsg();
                 break;
             } else {
-                toDo.addTask(input);
+                toDo.addTask(new ToDo(input));
             }
         }
         sc.close();

@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-class Task {
-    private String description;
-    private boolean isDone;
+abstract class Task {
+    protected String description;
+    protected boolean isDone;
 
     public Task(String description) {
         this.description = description;
         this.isDone = false;
     }
 
-    public void markDone() {
-       isDone = true;
-    }
+
+    public void markDone() { isDone = true; }
 
     public void markNotDone() {
         isDone = false;
@@ -26,8 +26,54 @@ class Task {
         return description;
     }
 
+    public abstract String getType();
+
     public String toString() {
-        return (isDone ? "[✮] " : "[ ] ") + description;
+        return "[" + getType() + "]" + (isDone ? "[✮] " : "[ ] ") + description;
+    }
+}
+
+class ToDo extends Task {
+    public ToDo(String description) {
+        super(description);
+    }
+
+    public String getType(){
+        return "T";
+    }
+}
+
+class Deadline extends Task {
+    private String deadline;
+
+    public Deadline(String description, String deadline) {
+        super(description);
+        this.deadline = deadline;
+    }
+
+    public String getType() {
+        return "D";
+    }
+
+    public String toString() {
+        return super.toString() + " (by: " + deadline + ")";
+    }
+}
+
+class Event extends Task {
+    private String start;
+    private String end;
+
+    public Event(String description, String start, String end) {
+        super(description);
+        this.start = start;
+        this.end = end;
+    }
+    public String getType() {
+        return "E";
+    }
+    public String toString() {
+        return super.toString() + " (from: " + start + " to: " + end + ")";
     }
 }
 
@@ -36,9 +82,9 @@ public class todoList {
     public todoList() {
         this.tasks = new ArrayList<>();
     }
-    public void addTask(String taskDescription) {
-        tasks.add(new Task(taskDescription));
-        System.out.println("\uD83C\uDF53 Added! > " + taskDescription + " <");
+    public void addTask(Task task) {
+        tasks.add(task);
+        System.out.println("\uD83C\uDF53 Added! > " + task + " <");
     }
 
     public void markTaskAsDone(int taskNumber) {
