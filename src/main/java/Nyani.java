@@ -21,6 +21,12 @@ public class Nyani {
                 }
             }
 
+            else if (input.equals("help")) {
+                systemOut.commands();
+            }
+
+
+
             else if (input.startsWith("unmark ")) {
                 try {
                     int taskNumber = Integer.parseInt(input.substring(7).trim());
@@ -30,14 +36,14 @@ public class Nyani {
                 }
             }
 
-            else if (input.startsWith ("deadline ")) {
+            else if (input.startsWith("deadline ")) {
                 String[] parts = input.substring(9).split(" /by ", 2);
                 if (parts.length == 2) {
                     toDo.addTask(new Deadline(parts[0], parts[1]));
                 } else {
                     System.out.println("wrong format! try deadline [task] /by [date/time]!");
                 }
-            } else if (input.startsWith ("event ")) {
+            } else if (input.startsWith("event ")) {
                 String[] fromPart = input.substring(6).split(" /from ", 2);
                 if (fromPart.length == 2) {
                     String[] toPart = fromPart[1].split("/to ", 2);
@@ -49,10 +55,8 @@ public class Nyani {
                 } else {
                     System.out.println("wrong format! try event /from [date/time] /to [date/time]!");
                 }
-            }
-
-            else if (input.equalsIgnoreCase("bye")) {
-               systemOut.exitMsg();
+            } else if (input.equalsIgnoreCase("bye")) {
+               systemOut.exitMsgs();
                 break;
             } else {
                 toDo.addTask(new ToDo(input));
