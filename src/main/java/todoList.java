@@ -86,6 +86,16 @@ public class todoList {
         System.out.println("\uD83C\uDF53 Added! > " + task + " <");
     }
 
+    public void deleteTask(int taskNumber) {
+            if (taskNumber <= 0 || taskNumber > tasks.size()) {
+                System.out.println("\uD83C\uDF53 Invalid task number!");
+            } else {
+                Task removedTask = tasks.remove(taskNumber - 1);
+                System.out.println("\uD83C\uDF53 Removed! > " + removedTask + " <");
+                System.out.println("You have " + tasks.size() + " task(s) left!");
+            }
+    }
+
     public void markTaskAsDone(int taskNumber) {
         if (taskNumber > tasks.size() || taskNumber <= 0) {
             System.out.println("There's no such task!");

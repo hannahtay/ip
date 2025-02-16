@@ -37,6 +37,13 @@ public class Nyani {
                     } catch (NumberFormatException var7) {
                         System.out.println("Invalid task number :(");
                     }
+                } else if (input.startsWith("delete ")) {
+                    try {
+                        int taskNumber = Integer.parseInt(input.substring(7).trim());
+                        toDo.deleteTask(taskNumber);
+                    } catch (NumberFormatException var9) {
+                        System.out.println("Invalid task number :(");
+                    }
                 } else if (input.startsWith("deadline ")) {
                     String[] parts = input.substring(9).split(" /by ", 2);
                     if (parts.length != 2) {
