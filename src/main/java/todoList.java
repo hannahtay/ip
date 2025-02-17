@@ -137,5 +137,14 @@ public class todoList {
         return taskStrings;
     }
 
+    public Task getTask(int taskNumber) {
+        if (taskNumber <= 0 || taskNumber > tasks.size()) {
+            System.out.println("Invalid task number.");
+            return null;  // Return null if the task number is out of range
+        }
+        return tasks.get(taskNumber - 1);  // Return the task at the given index (taskNumber - 1)
+    }
+
+
 }
 
