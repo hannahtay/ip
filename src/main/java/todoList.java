@@ -43,7 +43,7 @@ class ToDo extends Task {
 }
 
 class Deadline extends Task {
-    private String deadline;
+    String deadline;
 
     public Deadline(String description, String deadline) {
         super(description);
@@ -60,8 +60,8 @@ class Deadline extends Task {
 }
 
 class Event extends Task {
-    private String start;
-    private String end;
+    String start;
+    String end;
 
     public Event(String description, String start, String end) {
         super(description);
@@ -119,6 +119,22 @@ public class todoList {
             }
             System.out.println("──────────୨ৎ──────────");
         }
+    }
+
+    public List<String> getTaskStrings() {
+        List<String> taskStrings = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task instanceof ToDo) {
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "TODO: " + task.getDescription());
+            } else if (task instanceof Deadline) {
+                Deadline deadline = (Deadline) task;
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "DEADLINE " + ((Deadline) task).deadline + ": " + task.getDescription());
+            } else if (task instanceof Event) {
+                Event event = (Event) task;
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "EVENT " + event.start + " " + event.end + ": " + task.getDescription());
+            }
+        }
+        return taskStrings;
     }
 
 }

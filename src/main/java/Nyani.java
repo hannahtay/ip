@@ -4,16 +4,19 @@
 //
 
 import java.util.Scanner;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class Nyani {
-    public Nyani() {
-    }
 
     public static void main(String[] args) throws NyaniException {
         Scanner sc = new Scanner(System.in);
         sysMsgs systemOut = new sysMsgs();
         systemOut.showIntro();
         todoList toDo = new todoList();
+
+        SaveDataHandler.readSaveData(toDo);
 
         while(true) {
             String input = sc.nextLine();
@@ -58,6 +61,7 @@ public class Nyani {
                     toDo.addTask(new Event(fromPart[0], toPart[0], toPart[1]));
                 } else {
                     if (input.equalsIgnoreCase("bye")) {
+                        SaveDataHandler.saveData(toDo);
                         systemOut.exitMsgs();
                         break;
                     }
