@@ -4,16 +4,19 @@
 //
 
 import java.util.Scanner;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 
 public class Nyani {
-    public Nyani() {
-    }
 
     public static void main(String[] args) throws NyaniException {
         Scanner sc = new Scanner(System.in);
         sysMsgs systemOut = new sysMsgs();
         systemOut.showIntro();
         todoList toDo = new todoList();
+
+        SaveDataHandler.readSaveData(toDo);
 
         while(true) {
             String input = sc.nextLine();
@@ -25,6 +28,8 @@ public class Nyani {
                     try {
                         int taskNumber = Integer.parseInt(input.substring(5).trim());
                         toDo.markTaskAsDone(taskNumber);
+                        Task task = toDo.getTask(taskNumber);
+                        System.out.println("\uD83C\uDF53 Marked > " + task.getDescription() + " < as done!");
                     } catch (NumberFormatException var8) {
                         System.out.println("Invalid task number :(");
                     }
@@ -34,6 +39,8 @@ public class Nyani {
                     try {
                         int taskNumber = Integer.parseInt(input.substring(7).trim());
                         toDo.markTaskAsNotDone(taskNumber);
+                        Task task = toDo.getTask(taskNumber);
+                        System.out.println("\uD83C\uDF53 Unmarked > " + task + " < as done!");
                     } catch (NumberFormatException var7) {
                         System.out.println("Invalid task number :(");
                     }
@@ -50,7 +57,9 @@ public class Nyani {
                         throw new NyaniException("wrong format! try deadline [task] /by [date/time]!");
                     }
 
-                    toDo.addTask(new Deadline(parts[0], parts[1]));
+                    Deadline deadline = new Deadline(parts[0], parts[1]);
+                    toDo.addTask(deadline);
+                    System.out.println("\uD83C\uDF53 Added! > " + deadline + " <");
                 } else if (input.startsWith("event ")) {
                     String[] fromPart = input.substring(6).split(" /from ", 2);
                     if (fromPart.length != 2) {
@@ -62,9 +71,12 @@ public class Nyani {
                         throw new NyaniException("wrong format! try event /from [date/time] /to [date/time]!");
                     }
 
-                    toDo.addTask(new Event(fromPart[0], toPart[0], toPart[1]));
+                    Event event = new Event(fromPart[0], toPart[0], toPart[1]);
+                    toDo.addTask(event);
+                    System.out.println("\uD83C\uDF53 Added! > " + event + " <");
                 } else {
                     if (input.equalsIgnoreCase("bye")) {
+                        SaveDataHandler.saveData(toDo);
                         systemOut.exitMsgs();
                         break;
                     }
@@ -77,8 +89,9 @@ public class Nyani {
                     if (taskDescription.isEmpty()) {
                         throw new NyaniException("Type something to do!");
                     }
-
-                    toDo.addTask(new ToDo(taskDescription));
+                    ToDo toDoTask = new ToDo(taskDescription);
+                    toDo.addTask(toDoTask);
+                    System.out.println("\uD83C\uDF53 Added! > " + toDoTask + " <");
                 }
             } catch (NyaniException e) {
                 e.printWithDivider();

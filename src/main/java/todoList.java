@@ -43,7 +43,7 @@ class ToDo extends Task {
 }
 
 class Deadline extends Task {
-    private String deadline;
+    String deadline;
 
     public Deadline(String description, String deadline) {
         super(description);
@@ -60,8 +60,8 @@ class Deadline extends Task {
 }
 
 class Event extends Task {
-    private String start;
-    private String end;
+    String start;
+    String end;
 
     public Event(String description, String start, String end) {
         super(description);
@@ -83,7 +83,6 @@ public class todoList {
     }
     public void addTask(Task task) {
         tasks.add(task);
-        System.out.println("\uD83C\uDF53 Added! > " + task + " <");
     }
 
     public void deleteTask(int taskNumber) {
@@ -102,7 +101,6 @@ public class todoList {
         } else {
             Task task = tasks.get(taskNumber - 1);
             task.markDone();
-            System.out.println("\uD83C\uDF53 Marked > " + task.getDescription() + " < as done!");
         }
     }
 
@@ -112,7 +110,6 @@ public class todoList {
         } else {
             Task task = tasks.get(taskNumber - 1);
             task.markNotDone();
-            System.out.println("\uD83C\uDF53 Unmarked > " + task.getDescription() + " < as done!");
         }
     }
 
@@ -130,6 +127,31 @@ public class todoList {
             System.out.println("──────────୨ৎ──────────");
         }
     }
+
+    public List<String> getTaskStrings() {
+        List<String> taskStrings = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task instanceof ToDo) {
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "TODO: " + task.getDescription());
+            } else if (task instanceof Deadline) {
+                Deadline deadline = (Deadline) task;
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "DEADLINE (by: " + deadline.deadline + ") | " + task.getDescription());
+            } else if (task instanceof Event) {
+                Event event = (Event) task;
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "EVENT (from: " + event.start + " to: " + event.end + ") | " + task.getDescription());
+            }
+        }
+        return taskStrings;
+    }
+
+    public Task getTask(int taskNumber) {
+        if (taskNumber <= 0 || taskNumber > tasks.size()) {
+            System.out.println("Invalid task number.");
+            return null;  // Return null if the task number is out of range
+        }
+        return tasks.get(taskNumber - 1);  // Return the task at the given index (taskNumber - 1)
+    }
+
 
 }
 

@@ -31,7 +31,7 @@ public class sysMsgs {
         System.out.println("          try deadline [task] /by [date/time]!");
         System.out.println("event: creates an event with specified timeline");
         System.out.println("       try event /from [date/time] /to [date/time]!");
-        System.out.println("bye: exits the program");
+        System.out.println("Type <bye> to exit & save your list!");
         divider();
     }
 }
