@@ -59,7 +59,9 @@ public class SaveDataHandler {
                     } else if (taskInfo.startsWith("DEADLINE")) {
                         String[] deadlineParts = taskInfo.split("\\| ", 2);
                         String description = deadlineParts[1].trim();
-                        String deadline = deadlineParts[0].trim();
+                        String timeInfo = deadlineParts[0].trim();
+                        String[] timeParts = timeInfo.split(" \\(by: ",2);
+                        String deadline = timeParts[1].substring(0,timeParts[1].length()- 1).trim();
 
                         Deadline task = new Deadline(description, deadline);
                         if (status.equals("[✮")) {
@@ -67,7 +69,7 @@ public class SaveDataHandler {
                         }
                         toDo.addTask(task);
                     } else if (taskInfo.startsWith("EVENT")) {
-                        String[] eventParts = taskInfo.split("\\| ", 2);
+                        String[] eventParts = taskInfo.split("\\| ", 2); //splits at desc
                         String description = eventParts[1].trim();
                         String timeInfo = eventParts[0].trim();
 
