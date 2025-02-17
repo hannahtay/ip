@@ -6,9 +6,9 @@ public class sysMsgs {
 
     public void showIntro() {
         String logo =
-                "     /ᐠ,,,,∧\n"
-                        + "     (֊⎚-⎚)\n"
-                        + "     /⌒   づ\uD83D\uDCD7";
+                "     ^,,,,^\n"
+                        + "     ( O-O)\n"
+                        + "     /^   >";
         System.out.println(logo);
         System.out.println("Hi there! I'm NYANI ^_^");
         System.out.println("What shall we do today?");
@@ -17,7 +17,7 @@ public class sysMsgs {
 
     public void exitMsgs() {
         divider();
-        System.out.println("c U soon! ꈍ ꈍ");
+        System.out.println("c U soon!");
         divider();
     }
 
