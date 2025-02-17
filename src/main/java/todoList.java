@@ -128,10 +128,10 @@ public class todoList {
                 taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "TODO: " + task.getDescription());
             } else if (task instanceof Deadline) {
                 Deadline deadline = (Deadline) task;
-                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "DEADLINE (by: " + deadline.deadline + ") : " + task.getDescription());
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "DEADLINE (by: " + deadline.deadline + ") | " + task.getDescription());
             } else if (task instanceof Event) {
                 Event event = (Event) task;
-                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "EVENT (from: " + event.start + " to: " + event.end + ") : " + task.getDescription());
+                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "EVENT (from: " + event.start + " to: " + event.end + ") | " + task.getDescription());
             }
         }
         return taskStrings;
