@@ -83,7 +83,6 @@ public class todoList {
     }
     public void addTask(Task task) {
         tasks.add(task);
-        System.out.println("\uD83C\uDF53 Added! > " + task + " <");
     }
 
     public void markTaskAsDone(int taskNumber) {
@@ -92,7 +91,6 @@ public class todoList {
         } else {
             Task task = tasks.get(taskNumber - 1);
             task.markDone();
-            System.out.println("\uD83C\uDF53 Marked > " + task.getDescription() + " < as done!");
         }
     }
 
@@ -102,7 +100,6 @@ public class todoList {
         } else {
             Task task = tasks.get(taskNumber - 1);
             task.markNotDone();
-            System.out.println("\uD83C\uDF53 Unmarked > " + task.getDescription() + " < as done!");
         }
     }
 
