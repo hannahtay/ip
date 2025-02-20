@@ -1,7 +1,7 @@
 public class sysMsgs {
 
     public static void divider() {
-        System.out.println("──────────୨ৎ──────────");
+        System.out.println("────────────────────");
     }
 
     public void showIntro() {
@@ -17,7 +17,7 @@ public class sysMsgs {
 
     public void exitMsgs() {
         divider();
-        System.out.println("c U soon!");
+        System.out.println("c U soon! :D ");
         divider();
     }
 

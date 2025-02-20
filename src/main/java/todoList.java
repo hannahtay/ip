@@ -28,7 +28,7 @@ abstract class Task {
     public abstract String getType();
 
     public String toString() {
-        return "[" + getType() + "]" + (isDone ? "[✮] " : "[ ] ") + description;
+        return "[" + getType() + "]" + (isDone ? "[X] " : "[ ] ") + description;
     }
 }
 
@@ -115,16 +115,16 @@ public class todoList {
 
     public void showTasks() {
         if (tasks.isEmpty()){
-            System.out.println("──────────୨ৎ──────────");
-            System.out.println("Time to chill ₊˚⊹ ᰔ");
-            System.out.println("──────────୨ৎ──────────");
+            System.out.println("────────────────────");
+            System.out.println("Time to chill !");
+            System.out.println("────────────────────");
         } else {
-            System.out.println("──────────୨ৎ──────────");
+            System.out.println("────────────────────");
             System.out.println("To-do!");
             for (int i = 0; i < tasks.size(); i++) {
                 System.out.println((i + 1) + ". " + tasks.get(i));
             }
-            System.out.println("──────────୨ৎ──────────");
+            System.out.println("────────────────────");
         }
     }
 
@@ -132,13 +132,13 @@ public class todoList {
         List<String> taskStrings = new ArrayList<>();
         for (Task task : tasks) {
             if (task instanceof ToDo) {
-                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "TODO: " + task.getDescription());
+                taskStrings.add((task.isDone() ? "[X]" : "[ ]") + "TODO: " + task.getDescription());
             } else if (task instanceof Deadline) {
                 Deadline deadline = (Deadline) task;
-                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "DEADLINE (by: " + deadline.deadline + ") | " + task.getDescription());
+                taskStrings.add((task.isDone() ? "[X]" : "[ ]") + "DEADLINE (by: " + deadline.deadline + ") | " + task.getDescription());
             } else if (task instanceof Event) {
                 Event event = (Event) task;
-                taskStrings.add((task.isDone() ? "[✮]" : "[ ]") + "EVENT (from: " + event.start + " to: " + event.end + ") | " + task.getDescription());
+                taskStrings.add((task.isDone() ? "[X]" : "[ ]") + "EVENT (from: " + event.start + " to: " + event.end + ") | " + task.getDescription());
             }
         }
         return taskStrings;
