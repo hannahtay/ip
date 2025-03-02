@@ -5,9 +5,9 @@ public class NyaniException extends Exception {
     }
 
     public void printWithDivider() {
-        sysMsgs systemOut = new sysMsgs();
-        systemOut.divider();
+        Ui systemOut = new Ui();
+        systemOut.showDivider();
         System.out.println(super.getMessage());
-        systemOut.divider();
+        systemOut.showDivider();
     }
 }

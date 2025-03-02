@@ -46,14 +46,14 @@ public class SaveDataHandler {
                     String[] parts = line.split("\\]", 2);
                     if (parts.length < 2) continue;  // If the line is not valid, skip
 
-                    String status = parts[0].trim();  // Status part: [✮] or [ ]
+                    String status = parts[0].trim();  // Status part: [X] or [ ]
                     String taskInfo = parts[1].trim();  // Task info part: TODO
                     // Create tasks based on the type and description
                     if (taskInfo.startsWith("TODO:")) {
                         String description = taskInfo.substring(5).trim();
                         ToDo task = new ToDo(description);
                         if (status.equals("[X")) {
-                            task.markDone();  // Mark as done if [✮]
+                            task.markDone();  // Mark as done if [X]
                         }
                         toDo.addTask(task);
                     } else if (taskInfo.startsWith("DEADLINE")) {
@@ -65,7 +65,7 @@ public class SaveDataHandler {
 
                         Deadline task = new Deadline(description, deadline);
                         if (status.equals("[X")) {
-                            task.markDone();  // Mark as done if [✮]
+                            task.markDone();  // Mark as done if [X]
                         }
                         toDo.addTask(task);
                     } else if (taskInfo.startsWith("EVENT")) {
@@ -79,7 +79,7 @@ public class SaveDataHandler {
                         String end = times[1].substring(0, times[1].length() - 1).trim();
                         Event task = new Event(description, start, end);
                         if (status.equals("[X")) {
-                            task.markDone();  // Mark as done if [✮]
+                            task.markDone();  // Mark as done if [X]
                         }
                         toDo.addTask(task);
                     }

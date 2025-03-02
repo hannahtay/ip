@@ -1,6 +1,6 @@
-public class sysMsgs {
+public class Ui {
 
-    public static void divider() {
+    public static void showDivider() {
         System.out.println("────────────────────");
     }
 
@@ -15,15 +15,15 @@ public class sysMsgs {
         System.out.println("Type 'help' to see all commands :)");
     }
 
-    public void exitMsgs() {
-        divider();
+    public void showExitMsg() {
+        showDivider();
         System.out.println("c U soon! :D ");
-        divider();
+        showDivider();
     }
 
-    public void commands() {
+    public void showHelpMsg() {
         System.out.println("List of commands:");
-        divider();
+        showDivider();
         System.out.println("list: shows todo list");
         System.out.println("mark: marks item as done");
         System.out.println("unmark: unmarks item as done");
@@ -32,6 +32,6 @@ public class sysMsgs {
         System.out.println("event: creates an event with specified timeline");
         System.out.println("       try event /from [date/time] /to [date/time]!");
         System.out.println("Type <bye> to exit & save your list!");
-        divider();
+        showDivider();
     }
 }

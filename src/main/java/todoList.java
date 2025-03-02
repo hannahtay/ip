@@ -87,10 +87,10 @@ public class todoList {
 
     public void deleteTask(int taskNumber) {
             if (taskNumber <= 0 || taskNumber > tasks.size()) {
-                System.out.println("\uD83C\uDF53 Invalid task number!");
+                System.out.println("Invalid task number!");
             } else {
                 Task removedTask = tasks.remove(taskNumber - 1);
-                System.out.println("\uD83C\uDF53 Removed! > " + removedTask + " <");
+                System.out.println("Removed! > " + removedTask + " <");
                 System.out.println("You have " + tasks.size() + " task(s) left!");
             }
     }
