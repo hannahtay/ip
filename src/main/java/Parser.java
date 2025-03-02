@@ -45,6 +45,9 @@ public class Parser {
         case "help":
             return new HelpCommand();
 
+        case "find":
+            return new FindCommand(argument);
+
         default:
             throw new NyaniException("Nyani doesn't understand " + commandWord);
         }
