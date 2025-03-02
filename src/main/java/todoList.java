@@ -152,6 +152,17 @@ public class todoList {
         return tasks.get(taskNumber - 1);  // Return the task at the given index (taskNumber - 1)
     }
 
-
+    public void findTask(String keyword){
+        boolean found = false;
+        for (Task task : tasks) {
+            if (task.getDescription().toLowerCase().contains(keyword.toLowerCase())) {
+                System.out.println(task);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Task not found!");
+        }
+    }
 }
 
