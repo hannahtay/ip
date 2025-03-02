@@ -1,9 +1,18 @@
+/**
+ * Ui class handles displaying system messages to the user.
+ */
 public class Ui {
 
+    /**
+     * Displays a divider line to the console.
+     */
     public static void showDivider() {
         System.out.println("────────────────────");
     }
 
+    /**
+     * Displays an introductory message when the program starts.
+     */
     public void showIntro() {
         String logo =
                 "     ^,,,,^\n"
@@ -15,12 +24,18 @@ public class Ui {
         System.out.println("Type 'help' to see all commands :)");
     }
 
+    /**
+     * Displays an exit message when the program exits.
+     */
     public void showExitMsg() {
         showDivider();
         System.out.println("c U soon! :D ");
         showDivider();
     }
 
+    /**
+     * Displays the help message with a list of available commands.
+     */
     public void showHelpMsg() {
         System.out.println("List of commands:");
         showDivider();

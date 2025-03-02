@@ -31,9 +31,7 @@ public class Parser {
             return new ExitCommand();
             case "help":
                 return new HelpCommand();
-        case "find":
-            return new FindCommand(argument);
-                default: throw new NyaniException("Nyani doesn't understand " + commandWord + "!");
+                default: throw new NyaniException("Nyani doesn't understand " + commandWord);
             }
 
         }
