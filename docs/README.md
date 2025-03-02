@@ -147,3 +147,21 @@ Example: `find homework`
 [T][ ] do homework
 [D][ ] do homework (by: 5pm)
 ```
+
+## Saving tasks `bye`
+
+Exits the app, and saves the list.
+Remember to save the list by inputting `bye`, else it will not save!
+
+Example: `bye`
+
+```
+Nyani will remember ur tasks for u!
+Loading tasks...
+[ ]TODO: do homework
+[ ]DEADLINE (by: 5pm) | do homework
+[ ]EVENT (from: 5pm to: 6pm) | CS2113 class
+────────────────────
+c U soon! :D 
+────────────────────
+```
