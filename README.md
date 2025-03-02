@@ -1,10 +1,8 @@
-# Duke project template
+# Nyani User Guide =) 
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+Below are the features and respective instructions on how to use Nyani!
 
-## Setting up in Intellij
-
-Prerequisites: JDK 17, update Intellij to the most recent version.
+## Downloading Nyani
 
 1. Open Intellij (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project first)
 1. Open the project into Intellij as follows:
