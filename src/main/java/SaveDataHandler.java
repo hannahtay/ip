@@ -3,23 +3,36 @@ import java.nio.file.Paths;
 import java.nio.file.Path;
 import java.io.IOException;
 import java.util.List;
-import java.util.Arrays;
-import java.nio.file.Files;
 
+/**
+ * Handles the saving and reading of tasks to/from a file.
+ */
 public class SaveDataHandler {
 
+    /**
+     * Saves the current task list to a file and then loads it.
+     *
+     * @param toDo the to-do list containing the tasks to save.
+     */
     public static void saveData(todoList toDo) {
         String home = System.getProperty("user.home");
 
         Path saveFilePath = Paths.get(home, "Documents", "Nyani.txt");
 
+        // Write tasks to specified file
         writeSaveData(saveFilePath, toDo.getTaskStrings());
 
+        // Read saved tasks
         readSaveData(toDo);
 
     }
 
-
+    /**
+     * Writes the list of task strings to a file.
+     *
+     * @param path the path of the file to save the tasks to.
+     * @param tasks the list of task strings to save.
+     */
     private static void writeSaveData(Path path, List<String> tasks) {
         try {
             Files.write(path, tasks);
@@ -29,6 +42,11 @@ public class SaveDataHandler {
         }
     }
 
+    /**
+     * Reads saved tasks from a file and adds them to the to-do list.
+     *
+     * @param toDo the to-do list to which the tasks will be added.
+     */
     public static void readSaveData(todoList toDo) {
         String home = System.getProperty("user.home");
         Path saveFilePath = Paths.get(home, "Documents", "Nyani.txt");
@@ -39,6 +57,7 @@ public class SaveDataHandler {
                 System.out.println("Loading tasks...");
 
                 for (String line : lines) {
+
                     // Print each line being processed
                     System.out.println(line);
 

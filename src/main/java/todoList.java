@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Abstract Task class representing a generic task.
+ */
 abstract class Task {
     protected String description;
     protected boolean isDone;
@@ -27,11 +30,19 @@ abstract class Task {
 
     public abstract String getType();
 
+    /**
+     * Provides a string representation of the task.
+     *
+     * @return String representation of the task.
+     */
     public String toString() {
         return "[" + getType() + "]" + (isDone ? "[X] " : "[ ] ") + description;
     }
 }
 
+/**
+ * ToDo class representing a task classified under 'to-do'.
+ */
 class ToDo extends Task {
     public ToDo(String description) {
         super(description);
@@ -42,6 +53,9 @@ class ToDo extends Task {
     }
 }
 
+/**
+ * Deadline class representing a task with a deadline.
+ */
 class Deadline extends Task {
     String deadline;
 
@@ -59,6 +73,9 @@ class Deadline extends Task {
     }
 }
 
+/**
+ * Event class representing a task with a time window.
+ */
 class Event extends Task {
     String start;
     String end;
@@ -76,15 +93,29 @@ class Event extends Task {
     }
 }
 
+/**
+ * Class managing the list of tasks in the to-do list.
+ */
 public class todoList {
     private List<Task> tasks;
     public todoList() {
         this.tasks = new ArrayList<>();
     }
+
+    /**
+     * Adds a task to the to-do list.
+     *
+     * @param task the task to be added.
+     */
     public void addTask(Task task) {
         tasks.add(task);
     }
 
+    /**
+     * Deletes a task from the to-do list by its task number.
+     *
+     * @param taskNumber the task number to delete.
+     */
     public void deleteTask(int taskNumber) {
             if (taskNumber <= 0 || taskNumber > tasks.size()) {
                 System.out.println("Invalid task number!");
@@ -95,6 +126,11 @@ public class todoList {
             }
     }
 
+    /**
+     * Marks a task as done based on its task number.
+     *
+     * @param taskNumber the task number to mark as done.
+     */
     public void markTaskAsDone(int taskNumber) {
         if (taskNumber > tasks.size() || taskNumber <= 0) {
             System.out.println("There's no such task!");
@@ -104,6 +140,11 @@ public class todoList {
         }
     }
 
+    /**
+     * Marks a task as not done based on its task number.
+     *
+     * @param taskNumber the task number to mark as not done.
+     */
     public void markTaskAsNotDone(int taskNumber) {
         if (taskNumber > tasks.size() || taskNumber <= 0) {
             System.out.println("There's no such task!");
@@ -113,6 +154,9 @@ public class todoList {
         }
     }
 
+    /**
+     * Displays all tasks in the to-do list.
+     */
     public void showTasks() {
         if (tasks.isEmpty()){
             System.out.println("────────────────────");
@@ -128,6 +172,11 @@ public class todoList {
         }
     }
 
+    /**
+     * Converts the tasks into strings suitable for saving.
+     *
+     * @return List of task strings.
+     */
     public List<String> getTaskStrings() {
         List<String> taskStrings = new ArrayList<>();
         for (Task task : tasks) {
@@ -144,6 +193,12 @@ public class todoList {
         return taskStrings;
     }
 
+    /**
+     * Gets a task based on its task number.
+     *
+     * @param taskNumber the task number to retrieve.
+     * @return the task object at the given index, or null if invalid.
+     */
     public Task getTask(int taskNumber) {
         if (taskNumber <= 0 || taskNumber > tasks.size()) {
             System.out.println("Invalid task number.");
