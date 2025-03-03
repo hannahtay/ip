@@ -166,3 +166,18 @@ Loading tasks...
 c U soon! :D 
 ────────────────────
 ```
+
+## Additional Notes
+
+Should any unrecognised input be detected, user will be prompted to re-enter a recognisable input.
+
+Example: `hi`
+
+```
+────────────────────
+Nyani doesn't understand hi!
+Enter 'help' for available commands :)
+────────────────────
+```
+
+
