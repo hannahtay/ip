@@ -7,6 +7,7 @@
 Hi there! I'm NYANI ^_^
 What shall we do today?
 Type 'help' to see all commands :)
+Nyani doesn't have any files to read at the moment...
 ```
 Nyani is here to make organising tasks much easier!
 
