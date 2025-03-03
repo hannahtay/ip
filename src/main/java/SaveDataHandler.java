@@ -9,15 +9,24 @@ import java.util.List;
  */
 public class SaveDataHandler {
 
+    // Specifies relative path to save in the repo
+    private static final String SAVE_FILE_PATH = "data/Nyani.txt";
+
     /**
      * Saves the current task list to a file and then loads it.
      *
      * @param toDo the to-do list containing the tasks to save.
      */
     public static void saveData(todoList toDo) {
-        String home = System.getProperty("user.home");
 
-        Path saveFilePath = Paths.get(home, "Documents", "Nyani.txt");
+        Path saveFilePath = Paths.get(SAVE_FILE_PATH);
+
+        try {
+            Files.createDirectories(saveFilePath.getParent());
+        } catch (IOException e) {
+            System.err.println("Could not create directory.");
+            return;
+        }
 
         // Write tasks to specified file
         writeSaveData(saveFilePath, toDo.getTaskStrings());
@@ -48,8 +57,7 @@ public class SaveDataHandler {
      * @param toDo the to-do list to which the tasks will be added.
      */
     public static void readSaveData(todoList toDo) {
-        String home = System.getProperty("user.home");
-        Path saveFilePath = Paths.get(home, "Documents", "Nyani.txt");
+        Path saveFilePath = Paths.get(SAVE_FILE_PATH);
 
         if (Files.exists(saveFilePath)) {
             try {
