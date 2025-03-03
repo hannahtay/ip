@@ -175,7 +175,8 @@ Example: `hi`
 
 ```
 ────────────────────
-Nyani doesn't understand hi
+Nyani doesn't understand hi!
+Enter 'help' for available commands :)
 ────────────────────
 ```
 
