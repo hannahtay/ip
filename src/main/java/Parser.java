@@ -49,7 +49,7 @@ public class Parser {
             return new FindCommand(argument);
 
         default:
-            throw new NyaniException("Nyani doesn't understand " + commandWord);
+            throw new NyaniException("Nyani doesn't understand " + commandWord + "!\nEnter 'help' for available commands :)");
         }
     }
 
