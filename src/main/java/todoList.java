@@ -41,59 +41,6 @@ abstract class Task {
 }
 
 /**
- * ToDo class representing a task classified under 'to-do'.
- */
-class ToDo extends Task {
-    public ToDo(String description) {
-        super(description);
-    }
-
-    public String getType(){
-        return "T";
-    }
-}
-
-/**
- * Deadline class representing a task with a deadline.
- */
-class Deadline extends Task {
-    String deadline;
-
-    public Deadline(String description, String deadline) {
-        super(description);
-        this.deadline = deadline;
-    }
-
-    public String getType() {
-        return "D";
-    }
-
-    public String toString() {
-        return super.toString() + " (by: " + deadline + ")";
-    }
-}
-
-/**
- * Event class representing a task with a time window.
- */
-class Event extends Task {
-    String start;
-    String end;
-
-    public Event(String description, String start, String end) {
-        super(description);
-        this.start = start;
-        this.end = end;
-    }
-    public String getType() {
-        return "E";
-    }
-    public String toString() {
-        return super.toString() + " (from: " + start + " to: " + end + ")";
-    }
-}
-
-/**
  * Class managing the list of tasks in the to-do list.
  */
 public class todoList {

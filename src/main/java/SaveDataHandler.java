@@ -28,10 +28,8 @@ public class SaveDataHandler {
             return;
         }
 
-        // Write tasks to specified file
         writeSaveData(saveFilePath, toDo.getTaskStrings());
 
-        // Read saved tasks
         readSaveData(toDo);
 
     }
