@@ -1,7 +1,13 @@
+package commands;
+
+import tasks.Task;
+import tasks.todoList;
+import ui.Ui;
+
 /**
  * Represents the command to unmark a task as not done.
  */
-class UnmarkCommand extends Command {
+public class UnmarkCommand extends Command {
     private int taskNumber;
 
     public UnmarkCommand(int taskNumber) {

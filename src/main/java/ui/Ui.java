@@ -1,5 +1,7 @@
+package ui;
+
 /**
- * Ui class handles displaying system messages to the user.
+ * ui.Ui class handles displaying system messages to the user.
  */
 public class Ui {
 

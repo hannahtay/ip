@@ -1,7 +1,9 @@
+package tasks;
+
 /**
- * Deadline class representing a task with a deadline.
+ * tasks.Deadline class representing a task with a deadline.
  */
-class Deadline extends Task {
+public class Deadline extends Task {
     String deadline;
 
     public Deadline(String description, String deadline) {

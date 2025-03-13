@@ -1,7 +1,12 @@
+package commands;
+import tasks.todoList;
+import tasks.Task;
+import ui.Ui;
+
 /**
  * Represents the command to add a new task to the to-do list.
  */
-class AddCommand extends Command {
+public class AddCommand extends Command {
     private Task task;
 
     public AddCommand(Task task) {

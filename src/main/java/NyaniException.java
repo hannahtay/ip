@@ -1,3 +1,5 @@
+import ui.Ui;
+
 /**
  * Custom exception class for Nyani.
  */
