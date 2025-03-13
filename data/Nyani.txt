@@ -1,3 +1,0 @@
-[ ]TODO: this
-[X]DEADLINE (by: 33) | this
-[ ]EVENT (from: 2 to: 5) | this
