@@ -1,7 +1,13 @@
+package commands;
+
+import tasks.Task;
+import tasks.todoList;
+import ui.Ui;
+
 /**
  * Represents the command to delete a task from the to-do list.
  */
-class DeleteCommand extends Command {
+public class DeleteCommand extends Command {
     private int taskNumber;
 
     public DeleteCommand(int taskNumber) {

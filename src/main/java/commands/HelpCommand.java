@@ -1,7 +1,12 @@
+package commands;
+
+import tasks.todoList;
+import ui.Ui;
+
 /**
  * Represents the command to show help information to the user.
  */
-class HelpCommand extends Command {
+public class HelpCommand extends Command {
     @Override
     public void execute(todoList toDo, Ui ui){
         ui.showHelpMsg();

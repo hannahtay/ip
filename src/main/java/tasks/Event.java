@@ -1,7 +1,9 @@
+package tasks;
+
 /**
- * Event class representing a task with a time window.
+ * tasks.Event class representing a task with a time window.
  */
-class Event extends Task {
+public class Event extends Task {
     String start;
     String end;
 

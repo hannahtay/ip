@@ -1,5 +1,10 @@
+import commands.*;
+import tasks.Deadline;
+import tasks.Event;
+import tasks.ToDo;
+
 /**
- * Parses user input and returns the corresponding Command object.
+ * Parses user input and returns the corresponding commands.Command object.
  */
 public class Parser {
 
@@ -7,7 +12,7 @@ public class Parser {
      * Parses the input command string and returns the appropriate command.
      *
      * @param fullCommand the full command string entered by the user.
-     * @return the corresponding Command object.
+     * @return the corresponding commands.Command object.
      * @throws NyaniException if the command is invalid or improperly formatted.
      */
     public static Command parse(String fullCommand) throws NyaniException {
@@ -57,7 +62,7 @@ public class Parser {
      * Parses a deadline command and returns the corresponding command.
      *
      * @param argument the deadline command argument.
-     * @return the AddCommand with a Deadline task.
+     * @return the commands.AddCommand with a tasks.Deadline task.
      * @throws NyaniException if the deadline format is invalid.
      */
     private static Command parseDeadline(String argument) throws NyaniException {
@@ -72,7 +77,7 @@ public class Parser {
      * Parses an event command and returns the corresponding command.
      *
      * @param argument the event command argument.
-     * @return the AddCommand with an Event task.
+     * @return the commands.AddCommand with an tasks.Event task.
      * @throws NyaniException if the event format is invalid.
      */
     private static Command parseEvent(String argument) throws NyaniException {

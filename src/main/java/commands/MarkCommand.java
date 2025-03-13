@@ -1,8 +1,13 @@
+package commands;
+
+import tasks.Task;
+import tasks.todoList;
+import ui.Ui;
 
 /**
  * Represents the command to mark a task as done.
  */
-class MarkCommand extends Command {
+public class MarkCommand extends Command {
     private int taskNumber;
 
     public MarkCommand(int taskNumber) {

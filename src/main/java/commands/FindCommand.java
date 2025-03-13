@@ -1,7 +1,12 @@
+package commands;
+
+import tasks.todoList;
+import ui.Ui;
+
 /**
  * Represents the command to find tasks using user-specified keyword.
  */
-class FindCommand extends Command {
+public class FindCommand extends Command {
     private String keyword;
 
     public FindCommand(String keyword) {

@@ -1,3 +1,8 @@
+import tasks.Deadline;
+import tasks.Event;
+import tasks.ToDo;
+import tasks.todoList;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -72,7 +77,7 @@ public class SaveDataHandler {
                     if (parts.length < 2) continue;  // If the line is not valid, skip
 
                     String status = parts[0].trim();  // Status part: [X] or [ ]
-                    String taskInfo = parts[1].trim();  // Task info part: TODO
+                    String taskInfo = parts[1].trim();  // tasks.Task info part: TODO
                     // Create tasks based on the type and description
                     if (taskInfo.startsWith("TODO:")) {
                         String description = taskInfo.substring(5).trim();
