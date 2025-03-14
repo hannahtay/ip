@@ -3,7 +3,7 @@
 ## Installing Nyani
 
 - Make sure you have Java 17 installed.
-- Download the latest release [here](github.com/hannahtay/ip/releases)
+- Download the latest release [here](https://github.com/hannahtay/ip/releases/tag/A-Release)
 - Copy the file to the folder you want Nyani to be in.
 - Open your terminal and cd into the folder Nyani is in.
 - Run the file by inputting
@@ -31,17 +31,18 @@ Nyani is here to make organising tasks much easier!
   eg. `Todo`, `todo` and `TODO` all work the same.
 
 ## All Commands
+
 | Action  | Format |
 | ------------- | ------------- |
-| help  | `help`  |
-| list  | `list`  |
-| mark | `mark TASK_NUMBER` |
-| unmark | `unmark TASK_NUMBER` |
-| todo | `todo TASK_DESCRIPTION` |
-| deadline | `deadline TASK_DESCRIPTION /by TIME` |
-| event | `event TASK_DESCRIPTION /from TIME /to TIME` |
-| find | Format: `find KEYWORD` |
-| bye | `bye` |
+| [help](https://hannahtay.github.io/ip/#viewing-a-list-of-commands-help) | `help`  |
+| [list](https://hannahtay.github.io/ip/#viewing-task-list-list)  | `list`  |
+| [mark](https://hannahtay.github.io/ip/#marking-tasks-as-done-mark) | `mark TASK_NUMBER` |
+| [unmark](https://hannahtay.github.io/ip/#unmarking-tasks-as-done-unmark) | `unmark TASK_NUMBER` |
+| [todo](https://hannahtay.github.io/ip/#adding-normal-tasks-todo) | `todo TASK_DESCRIPTION` |
+| [deadline](https://hannahtay.github.io/ip/#adding-deadlines-deadline) | `deadline TASK_DESCRIPTION /by TIME` |
+| [event](https://hannahtay.github.io/ip/#adding-events-event) | `event TASK_DESCRIPTION /from TIME /to TIME` |
+| [find](https://hannahtay.github.io/ip/#finding-tasks-find) | Format: `find KEYWORD` |
+| [bye](https://hannahtay.github.io/ip/#saving-tasks-bye) | `bye` |
 
 ## Viewing a list of commands `help`
 
