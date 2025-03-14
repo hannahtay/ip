@@ -1,4 +1,15 @@
-# Nyani User Guide
+# Nyani User Guide :cat2:
+
+## Installing Nyani
+
+- Make sure you have Java 17 installed.
+- Download the latest release [here](github.com/hannahtay/ip/releases)
+- Copy the file to the folder you want Nyani to be in.
+- Open your terminal and cd into the folder Nyani is in.
+- Run the file by inputting
+  `java -jar ip.jar`
+
+The below interface should appear and you're all set!
 
 ```
      ^,,,,^
@@ -18,6 +29,19 @@ Nyani is here to make organising tasks much easier!
   
 - Commands are not case-sensitive.
   eg. `Todo`, `todo` and `TODO` all work the same.
+
+## All Commands
+| Action  | Format |
+| ------------- | ------------- |
+| help  | `help`  |
+| list  | `list`  |
+| mark | `mark TASK_NUMBER` |
+| unmark | `unmark TASK_NUMBER` |
+| todo | `todo TASK_DESCRIPTION` |
+| deadline | `deadline TASK_DESCRIPTION /by TIME` |
+| event | `event TASK_DESCRIPTION /from TIME /to TIME` |
+| find | Format: `find KEYWORD` |
+| bye | `bye` |
 
 ## Viewing a list of commands `help`
 
