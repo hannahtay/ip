@@ -1,4 +1,4 @@
-# Nyani User Guide :cat2:
+# Nyani User Guide 
 
 ## Installing Nyani
 
